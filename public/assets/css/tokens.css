@@ -1,0 +1,172 @@
+/* ==========================================================================
+   Metazo Design System — Colors & Type (trimmed to Nova-ish Fields tokens,
+   the only surface this app uses). Source: colors_and_type.css from the
+   Claude Design handoff. Self-hosted Inter, no external font CDN (GDPR).
+   ========================================================================== */
+@import url('fonts.css');
+
+/* ─────────────────────────────────────────────────────────────────────────
+   1. NOVA-ISH FIELDS — canonical Metazo token set (oklch)
+   ───────────────────────────────────────────────────────────────────────── */
+:root {
+    --nf-gray-50:  oklch(98.5% 0.002 247.839);
+    --nf-gray-100: oklch(96.7% 0.003 264.542);
+    --nf-gray-200: oklch(92.8% 0.006 264.531);
+    --nf-gray-300: oklch(87.2% 0.01  258.338);
+    --nf-gray-400: oklch(70.7% 0.022 261.325);
+    --nf-gray-500: oklch(55.1% 0.027 264.364);
+    --nf-gray-600: oklch(44.6% 0.03  256.802);
+    --nf-gray-700: oklch(37.3% 0.034 259.733);
+    --nf-gray-800: oklch(27.8% 0.033 256.848);
+    --nf-gray-900: oklch(21%   0.034 264.665);
+    --nf-gray-950: oklch(13%   0.028 261.692);
+
+    --nf-base-100: oklch(100% 0 0);
+    --nf-base-200: oklch(98%  0.003 247.858);
+    --nf-base-300: oklch(96%  0.007 247.896);
+    --nf-base-content: oklch(20% 0.042 265.755);
+
+    --nf-primary: oklch(0.557 0.224 264.94);
+    --nf-primary-content: oklch(93% 0.034 272.788);
+    --nf-primary-in-content: oklch(98% 0.034 272.788);
+    --nf-captain-marvel: oklch(0.296 0.117 264.528);
+
+    --nf-secondary: oklch(89% 0.061 343.231);
+    --nf-secondary-content: oklch(45% 0.187 3.815);
+
+    --nf-accent: oklch(90% 0.093 164.15);
+    --nf-accent-content: oklch(38% 0.063 188.416);
+
+    --nf-neutral: oklch(95% 0.026 236.824);
+    --nf-neutral-content: oklch(20% 0.042 265.755);
+
+    --nf-info:    oklch(74% 0.16  232.661);
+    --nf-info-content:    oklch(29% 0.066 243.157);
+    --nf-success: oklch(76% 0.177 163.223);
+    --nf-success-content: oklch(37% 0.077 168.94);
+    --nf-warning: oklch(82% 0.189 84.429);
+    --nf-warning-content: oklch(41% 0.112 45.904);
+    --nf-error:   oklch(71% 0.194 13.428);
+    --nf-error-content:   oklch(27% 0.105 12.094);
+
+    --nf-primary-dark:   oklch(from var(--nf-primary) calc(l - 0.06) c h);
+    --nf-primary-light:  oklch(from var(--nf-primary) 96% 0.03 h);
+    --nf-primary-border: oklch(from var(--nf-primary) 85% 0.06 h);
+    --nf-primary-ring:   oklch(from var(--nf-primary) l c h / 25%);
+
+    --nf-text:         var(--nf-gray-700);
+    --nf-text-heading: var(--nf-gray-900);
+    --nf-text-dark:    var(--nf-gray-900);
+    --nf-text-muted:   var(--nf-gray-500);
+    --nf-label-color:  var(--nf-gray-600);
+
+    --nf-border-color:       var(--nf-gray-300);
+    --nf-border-color-hover: var(--nf-gray-400);
+    --nf-border-color-focus: var(--nf-primary);
+
+    --nf-focus-ring:
+        0 0 0 1px var(--nf-border-color-focus),
+        0 0 0 4px oklch(from var(--nf-primary) l c h / 12%);
+
+    --nf-font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    --nf-font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --nf-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+    --nf-font-size-xs:      0.75rem;
+    --nf-font-size-sm:      0.8125rem;
+    --nf-font-size-base:    0.85rem;
+    --nf-font-size-heading: 1rem;
+
+    --nf-input-font-size:  var(--nf-font-size-base);
+    --nf-label-font-size:  var(--nf-font-size-base);
+    --nf-option-font-size: var(--nf-font-size-sm);
+    --nf-label-font-weight: 500;
+
+    --nf-input-bg: var(--nf-base-100);
+    --nf-input-height: 32px;
+    --nf-input-height-sm: 28px;
+    --nf-input-padding: 0.375rem 0.625rem;
+
+    --nf-placeholder-color: var(--nf-gray-400);
+    --nf-disabled-bg: var(--nf-base-300);
+    --nf-disabled-opacity: 0.9;
+
+    --nf-border-radius-sm: 4px;
+    --nf-border-radius:    6px;
+    --nf-border-radius-lg: 8px;
+    --nf-border-radius-xl: 12px;
+
+    --nf-shadow-sm:   0 1px 2px 0 oklch(0% 0 0 / 5%);
+    --nf-shadow-card: 0 1px 3px oklch(0% 0 0 / 10%);
+    --nf-transition:  border-color 0.15s ease, box-shadow 0.15s ease;
+
+    --nf-ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --nf-duration-fast:   150ms;
+    --nf-duration-normal: 250ms;
+
+    --nf-gradient-header: linear-gradient(var(--nf-gray-50), var(--nf-gray-100));
+
+    --nf-table-header-bg:    var(--nf-base-300);
+    --nf-table-header-color: var(--nf-text);
+    --nf-table-border-color: var(--nf-gray-200);
+    --nf-table-row-hover:    var(--nf-base-200);
+    --nf-table-row-even:     var(--nf-base-200);
+    --nf-table-row-bg:       var(--nf-base-100);
+}
+
+[data-theme="dark"], .dark {
+    --nf-base-100: oklch(27.8% 0.033 256.848);
+    --nf-base-200: oklch(23.26% 0.014 253.1);
+    --nf-base-300: oklch(21.15% 0.012 254.09);
+    --nf-base-content: oklch(96% 0.007 247.896);
+
+    --nf-text:         var(--nf-gray-200);
+    --nf-text-heading: oklch(98% 0.003 247.858);
+    --nf-text-muted:   var(--nf-gray-400);
+    --nf-label-color:  var(--nf-gray-300);
+    --nf-border-color: var(--nf-gray-700);
+    --nf-border-color-hover: var(--nf-gray-600);
+
+    --nf-input-bg: var(--nf-base-100);
+    --nf-table-header-bg: var(--nf-base-300);
+    --nf-table-row-hover: oklch(30% 0.03 256);
+    --nf-table-row-even:  var(--nf-base-200);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   4. SEMANTIC ALIASES
+   ───────────────────────────────────────────────────────────────────────── */
+:root {
+    --fg-primary: var(--nf-text-heading);
+    --fg-body:    var(--nf-text);
+    --fg-muted:   var(--nf-text-muted);
+
+    --bg-page:    var(--nf-base-200);
+    --bg-surface: var(--nf-base-100);
+
+    --border-default: var(--nf-border-color);
+    --border-strong:  var(--nf-border-color-hover);
+
+    --font-sans:    var(--nf-font-family);
+    --radius:    var(--nf-border-radius);
+    --radius-lg: var(--nf-border-radius-lg);
+
+    --shadow-card: var(--nf-shadow-card);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   5. SEMANTIC TYPE UTILITIES
+   ───────────────────────────────────────────────────────────────────────── */
+.type-h1 {
+    font-family: var(--nf-font-family);
+    font-size: 2.25rem;
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+}
+.type-body {
+    font-family: var(--nf-font-family);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--nf-text);
+}

@@ -1,0 +1,4 @@
+# Defense in depth: if the webserver's document root is ever pointed at the
+# repo root instead of public/, this blocks all access rather than exposing
+# source, config, or vendor/. The document root MUST be public/ — see README.md.
+Require all denied
