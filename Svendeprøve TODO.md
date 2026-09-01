@@ -1,0 +1,4 @@
+1. Mock af hjemmeside design - har lavet design med Claude Design og lagt mappen med det ind i min Discord kanal
+2. Undersøg pakker og ligenede der skal/kan bruges til at lave hjemmesiden - **Pakker**: Ingen framework — PHP 8.2+ med PDO/MariaDB, `vlucas/phpdotenv`, selv-hostet Chart.js og Font Awesome (allerede implementeret).
+3. Sikkerhed på hjemmesiden. Cookie storage til tokens - **Sikkerhed/cookies**: Session-cookie (`HttpOnly`, `Secure`, `SameSite=Strict`) til login, ikke en selvbygget token — agenter bruger separat API-nøgle, ikke cookies.
+4. SignalR skal kører igennem noget JS for at hente data fra API'et - **SignalR**: Ja, det er muligt — SignalR-JS-klienten (`@microsoft/signalr`) kan hente data direkte fra en hub i browseren, men det kræver at der rent faktisk findes en SignalR-hub (en ASP.NET Core-backend) at forbinde til, hvilket ikke er tilfældet i dette projekt.
